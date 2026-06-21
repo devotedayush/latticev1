@@ -3939,7 +3939,7 @@ function AdminDashboardModal({
       <div
         className="sheet"
         onClick={(e) => e.stopPropagation()}
-        style={{ maxWidth: "min(1120px, calc(100vw - 16px))", maxHeight: "calc(100vh - 24px)" }}
+        style={{ maxWidth: "min(1120px, calc(100vw - 16px))" }}
       >
         <div className="sheet-head">
           <div>
