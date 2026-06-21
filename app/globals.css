@@ -587,6 +587,10 @@ textarea {
 
 .sheet {
   width: min(720px, 100%);
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -605,6 +609,7 @@ textarea {
   justify-content: space-between;
   padding: 18px 22px 14px;
   border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
 }
 
 .sheet-head .title {
@@ -615,6 +620,11 @@ textarea {
 
 .sheet-body {
   padding: 18px 22px 22px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+  min-height: 0;
+  overscroll-behavior: contain;
 }
 
 .sheet-hint {
@@ -650,6 +660,14 @@ textarea {
   gap: 8px;
   justify-content: flex-end;
   margin-top: 14px;
+  flex-shrink: 0;
+}
+
+/* Dropdowns / popovers: never exceed the viewport — scroll instead */
+.team-menu {
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 /* Rich interpretation reply */
